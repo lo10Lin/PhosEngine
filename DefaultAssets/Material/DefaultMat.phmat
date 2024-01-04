@@ -1,0 +1,4 @@
+c_alb 1 1 1
+shader Assets\Shader\PBRShader.prog
+v_meta 0
+v_rough 0

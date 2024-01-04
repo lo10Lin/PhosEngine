@@ -1,0 +1,4 @@
+t_alb Assets\Texture\boo.png
+shader Assets\Shader\PBRShader.prog
+v_meta 0.342
+v_rough 0.205

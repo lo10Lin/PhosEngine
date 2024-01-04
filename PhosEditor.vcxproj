@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{7b30b564-9f43-44e0-b8a1-c47c6e08b689}</ProjectGuid>
+    <RootNamespace>PhosEditor</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>PhosEditor</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <ExternalIncludePath>External;$(ExternalIncludePath)</ExternalIncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <ExternalIncludePath>External;$(ExternalIncludePath)</ExternalIncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <ExternalIncludePath>External;$(ExternalIncludePath)</ExternalIncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <ExternalIncludePath>External;$(ExternalIncludePath)</ExternalIncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>Headers</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Libs/*;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>DLL/*;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "DLL\" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>Headers</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Libs/*;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>DLL/*;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "DLL\" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>Headers/;External/;External/ImGUI/Header/;External/PhosEngine/;External/ImGuizmo/Header/</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>assimp-vc142-mt.lib;glew32s.lib;glew32.lib;glfw3.lib;PhosEngine.lib;opengl32.lib;user32.lib;gdi32.lib;shell32.lib;PhysX/DBG/LowLevel_static_64.lib;PhysX/DBG/LowLevelAABB_static_64.lib;PhysX/DBG/LowLevelDynamics_static_64.lib;PhysX/DBG/PhysX_64.lib;PhysX/DBG/PhysXCharacterKinematic_static_64.lib;PhysX/DBG/PhysXCommon_64.lib;PhysX/DBG/PhysXCooking_64.lib;PhysX/DBG/PhysXExtensions_static_64.lib;PhysX/DBG/PhysXFoundation_64.lib;PhysX/DBG/PhysXPvdSDK_static_64.lib;PhysX/DBG/PhysXTask_static_64.lib;PhysX/DBG/PhysXVehicle_static_64.lib;PhysX/DBG/SceneQuery_static_64.lib;PhysX/DBG/SimulationController_static_64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>DLL/*;%(AdditionalLibraryDirectories);$(SolutionDir)Libs/;$(SolutionDir)Libs/;</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "DLL\" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>Headers/;External/;External/ImGUI/Header/;External/PhosEngine/;External/ImGuizmo/Header/</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>assimp-vc142-mt.lib;glew32s.lib;glew32.lib;glfw3.lib;PhosEngine.lib;opengl32.lib;user32.lib;gdi32.lib;shell32.lib;PhysX\Realease\LowLevel_static_64.lib;PhysX\Realease\LowLevelAABB_static_64.lib;PhysX\Realease\LowLevelDynamics_static_64.lib;PhysX\Realease\PhysX_64.lib;PhysX\Realease\PhysXCharacterKinematic_static_64.lib;PhysX\Realease\PhysXCommon_64.lib;PhysX\Realease\PhysXCooking_64.lib;PhysX\Realease\PhysXExtensions_static_64.lib;PhysX\Realease\PhysXFoundation_64.lib;PhysX\Realease\PhysXPvdSDK_static_64.lib;PhysX\Realease\PhysXTask_static_64.lib;PhysX\Realease\PhysXVehicle_static_64.lib;PhysX\Realease\SceneQuery_static_64.lib;PhysX\Realease\SimulationController_static_64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>DLL/*;%(AdditionalLibraryDirectories);$(SolutionDir)Libs/;$(SolutionDir)Libs/;</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "DLL\" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="External\ImGUI\Source\imgui.cpp" />
+    <ClCompile Include="External\ImGUI\Source\imgui_demo.cpp" />
+    <ClCompile Include="External\ImGUI\Source\imgui_draw.cpp" />
+    <ClCompile Include="External\ImGUI\Source\imgui_impl_glfw.cpp" />
+    <ClCompile Include="External\ImGUI\Source\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="External\ImGUI\Source\imgui_tables.cpp" />
+    <ClCompile Include="External\ImGUI\Source\imgui_widgets.cpp" />
+    <ClCompile Include="External\ImGuizmo\Source\GraphEditor.cpp" />
+    <ClCompile Include="External\ImGuizmo\Source\ImCurveEdit.cpp" />
+    <ClCompile Include="External\ImGuizmo\Source\ImGradient.cpp" />
+    <ClCompile Include="External\ImGuizmo\Source\ImGuizmo.cpp" />
+    <ClCompile Include="External\ImGuizmo\Source\ImSequencer.cpp" />
+    <ClCompile Include="Sources\Core\App.cpp" />
+    <ClCompile Include="Sources\Core\Editor.cpp" />
+    <ClCompile Include="Sources\Core\ProjectManager.cpp" />
+    <ClCompile Include="Sources\GUI\EditorGUI\AssetExplorer.cpp" />
+    <ClCompile Include="Sources\GUI\EditorGUI\CanvasEditor.cpp" />
+    <ClCompile Include="Sources\GUI\EditorGUI\GameGUI.cpp" />
+    <ClCompile Include="Sources\GUI\EditorGUI\GeneralSettingsGUI.cpp" />
+    <ClCompile Include="Sources\GUI\EditorGUI\HierarchyGUI.cpp" />
+    <ClCompile Include="Sources\GUI\EditorGUI\InputGUI.cpp" />
+    <ClCompile Include="Sources\GUI\EditorGUI\PhysicsSettingsGUI.cpp" />
+    <ClCompile Include="Sources\GUI\EditorGUI\PlayStateGUI.cpp" />
+    <ClCompile Include="Sources\GUI\EditorGUI\RendererGUI.cpp" />
+    <ClCompile Include="Sources\GUI\IGUI.cpp" />
+    <ClCompile Include="Sources\GUI\EditorGUI\InspectorGUI.cpp" />
+    <ClCompile Include="Sources\GUI\EditorGUI\SceneGUI.cpp" />
+    <ClCompile Include="Sources\main.cpp" />
+    <ClCompile Include="Sources\GUI\ProjectManagerGUI\ProjectManagerGUI.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="External\GLFW\glfw3.h" />
+    <ClInclude Include="External\GLFW\glfw3native.h" />
+    <ClInclude Include="External\GL\eglew.h" />
+    <ClInclude Include="External\GL\glew.h" />
+    <ClInclude Include="External\GL\glxew.h" />
+    <ClInclude Include="External\GL\wglew.h" />
+    <ClInclude Include="External\ImGuizmo\Header\GraphEditor.h" />
+    <ClInclude Include="External\ImGuizmo\Header\ImCurveEdit.h" />
+    <ClInclude Include="External\ImGuizmo\Header\ImGradient.h" />
+    <ClInclude Include="External\ImGuizmo\Header\ImGuizmo.h" />
+    <ClInclude Include="External\ImGuizmo\Header\ImSequencer.h" />
+    <ClInclude Include="External\ImGuizmo\Header\ImZoomSlider.h" />
+    <ClInclude Include="External\ImGUI\Header\imconfig.h" />
+    <ClInclude Include="External\ImGUI\Header\imgui.h" />
+    <ClInclude Include="External\ImGUI\Header\imgui_impl_glfw.h" />
+    <ClInclude Include="External\ImGUI\Header\imgui_impl_opengl3.h" />
+    <ClInclude Include="External\ImGUI\Header\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="External\ImGUI\Header\imgui_internal.h" />
+    <ClInclude Include="External\ImGUI\Header\imstb_rectpack.h" />
+    <ClInclude Include="External\ImGUI\Header\imstb_textedit.h" />
+    <ClInclude Include="External\ImGUI\Header\imstb_truetype.h" />
+    <ClInclude Include="External\PhosEngine\dllInclude.hpp" />
+    <ClInclude Include="External\PhosEngine\Engine\GameObject.hpp" />
+    <ClInclude Include="External\PhosEngine\Engine\Input.hpp" />
+    <ClInclude Include="External\PhosEngine\Engine\MonoBehaviour.hpp" />
+    <ClInclude Include="External\PhosEngine\Engine\Scene.hpp" />
+    <ClInclude Include="External\PhosEngine\Engine\Transform.hpp" />
+    <ClInclude Include="External\PhosEngine\LowRenderer\Camera.hpp" />
+    <ClInclude Include="External\PhosEngine\LowRenderer\Framebuffer.hpp" />
+    <ClInclude Include="External\PhosEngine\LowRenderer\MeshRenderer.hpp" />
+    <ClInclude Include="External\PhosEngine\LowRenderer\Renderer.hpp" />
+    <ClInclude Include="External\PhosEngine\Maths\Maths.hpp" />
+    <ClInclude Include="External\PhosEngine\Reflection\ClassMetaData.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\Animation.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\AnimBone.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\Armature.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\Audio.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\CubeMap.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\File.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\FileManager.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\IResource.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\IShader.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\Material.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\Mesh.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\Parser.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\PostProcessingShader.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\Prefab.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\ResourceIncludes.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\ResourceManager.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\ShaderInfo.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\ShaderProgram.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\SubMesh.hpp" />
+    <ClInclude Include="External\PhosEngine\Resource\Texture.hpp" />
+    <ClInclude Include="External\PhosEngine\Script\InputManager.hpp" />
+    <ClInclude Include="External\PhosEngine\Script\PlayerMouvement.hpp" />
+    <ClInclude Include="External\PhosEngine\Sound\SoundPlayer.hpp" />
+    <ClInclude Include="External\PhosEngine\Threading\AtomicMutex.hpp" />
+    <ClInclude Include="External\PhosEngine\Threading\PoolSystem.hpp" />
+    <ClInclude Include="External\PhosEngine\Threading\Thread.hpp" />
+    <ClInclude Include="External\PhosEngine\UI\Canvas.hpp" />
+    <ClInclude Include="External\PhosEngine\UI\RectTransform.hpp" />
+    <ClInclude Include="External\PhosEngine\UI\SpriteRenderer.hpp" />
+    <ClInclude Include="External\PhosEngine\UI\UIElement.hpp" />
+    <ClInclude Include="External\PhosEngine\UI\UISprite.hpp" />
+    <ClInclude Include="External\PhosEngine\Wrapper\GUI.hpp" />
+    <ClInclude Include="External\PhosEngine\Wrapper\RHI.hpp" />
+    <ClInclude Include="External\PhosEngine\Wrapper\PhysicsWrapper.hpp" />
+    <ClInclude Include="External\PhosEngine\Physic\PhysicsManager.hpp" />
+    <ClInclude Include="External\PhosEngine\Wrapper\Window.hpp" />
+    <ClInclude Include="Headers\Core\App.hpp" />
+    <ClInclude Include="Headers\Core\Editor.hpp" />
+    <ClInclude Include="Headers\Core\ProjectManager.hpp" />
+    <ClInclude Include="Headers\GUI\EditorGUI\AssetExplorer.hpp" />
+    <ClInclude Include="Headers\GUI\EditorGUI\CanvasEditor.hpp" />
+    <ClInclude Include="Headers\GUI\EditorGUI\GameGUI.hpp" />
+    <ClInclude Include="Headers\GUI\EditorGUI\GeneralSettingsGUI.hpp" />
+    <ClInclude Include="Headers\GUI\EditorGUI\InputGUI.hpp" />
+    <ClInclude Include="Headers\GUI\EditorGUI\PlayStateGUI.hpp" />
+    <ClInclude Include="Headers\GUI\EditorGUI\HierarchyGUI.hpp" />
+    <ClInclude Include="Headers\GUI\EditorGUI\PhysicsSettingsGUI.hpp" />
+    <ClInclude Include="Headers\GUI\EditorGUI\RendererGUI.hpp" />
+    <ClInclude Include="Headers\GUI\IGUI.hpp" />
+    <ClInclude Include="Headers\GUI\EditorGUI\InspectorGUI.hpp" />
+    <ClInclude Include="Headers\GUI\EditorGUI\SceneGUI.hpp" />
+    <ClInclude Include="Headers\GUI\ProjectManagerGUI\ProjectManagerGUI.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DLL\PhosCore.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Libs\assimp-vc142-mt.lib" />
+    <Library Include="Libs\glew32.lib" />
+    <Library Include="Libs\glew32s.lib" />
+    <Library Include="Libs\glfw3.lib" />
+    <Library Include="Libs\glfw3_mt.lib" />
+    <Library Include="Libs\PhosEngine.lib" />
+    <Library Include="Libs\zlibstatic.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
